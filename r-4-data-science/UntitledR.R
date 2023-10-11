@@ -63,4 +63,15 @@ data1$file
 data1$meta$name
 data1$meta$source_link
 
+data1 <- list(
+  file = "data/international_flights.json",
+  meta = list(
+    name = "國際航空定期時刻表",
+    source_link = "https://data.gov.tw/dataset/161167")
+)
 
+flights$data[[1]]
+
+saveRDS(flights, file="data/flights.rds")
+
+flights = readRDS("data/flights.rds")
