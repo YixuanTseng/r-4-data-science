@@ -54,6 +54,7 @@ saveRDS(flights, file = "data/flights.rds")
 filepath = flights$data[[1]]$file
 filghtsData <- jsonlite::fromJSON(filepath)
 
-flights$data[[1]]$data_frame
+flights$data[[1]]$data_frame <- flightsData
+
 
 
