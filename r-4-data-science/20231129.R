@@ -74,3 +74,23 @@ for (y in seq_along(dataSet))
 
 
 #example
+
+# flightsData
+flights <- readRDS("data/flights_week11.rds")
+flightsData <- flights$data[[1]]$data_frame
+
+# split according to AirlineID
+flightsData |>
+  split(
+    flightsData$AirlineID
+  ) ->split_data
+#for each split data frame, we want to know
+# how many flights it contains
+numberOfFLIGHTS <- vector("integer", length(split_data))
+
+for (.x in seq_along(split_data)) {
+  numberOfFLIGHTS[[.x]] <-
+    nrow(split_data[[.x]])
+}
+
+names(split_data)
